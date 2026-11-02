@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#faf7f0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>Wheebuy Spreadsheet — Fashion Finds &amp; Buying Checklist</title>
+  <meta name="description" content="Explore a Wheebuy spreadsheet guide for shoes, clothing and accessories. Browse CAFANS categories and learn how to compare sizing, photos and total costs.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Wheebuy Spreadsheet — The Fashion Field Guide">
+  <meta property="og:description" content="A category-first guide to fashion finds, product links, sizing questions and practical buying checks.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wheebuy Spreadsheet — Fashion Field Guide">
+  <meta name="twitter:description" content="Discover clothing categories and compare the details that matter before ordering.">
+
+  <!-- index.html: Add a self-referencing canonical and og:url after the final public URL is known. -->
+
+  <style>
+    :root{--paper:#faf7f0;--ink:#182c25;--muted:#606a61;--line:#d9dccf;--green:#254d3e;--lime:#e2ecaa;--white:#fffef9;--orange:#a74725}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+    a:hover{color:var(--orange)}
+    img{display:block;width:100%;height:100%;object-fit:cover;background:#e7e6dd}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{line-height:1.08}
+    h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em}
+    h1{font-size:clamp(3.4rem,7.7vw,7.4rem);margin-bottom:26px}
+    h2{font-size:clamp(2.15rem,4vw,3.7rem);margin-bottom:22px}
+    h3{font-size:1.08rem;letter-spacing:-.015em}
+    p{margin-bottom:18px}
+    .wrap{width:min(1240px,calc(100% - 48px));margin:auto}
+    .eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.17em}
+    .muted{color:var(--muted)}
+    .topline{background:var(--green);color:var(--white);padding:9px 20px;text-align:center;font-size:.73rem;letter-spacing:.055em}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0;border-bottom:1px solid var(--line)}
+    .logo{text-decoration:none;font-size:1.3rem;font-weight:900;letter-spacing:-.065em}
+    .logo span{font-weight:400}
+    .header-note{font-size:.76rem;color:var(--muted)}
+    .header-link{font-size:.8rem;font-weight:700;white-space:nowrap}
+    .category-section{padding:25px 0 29px;border-bottom:1px solid var(--line)}
+    .category-heading{display:flex;justify-content:space-between;gap:20px;margin-bottom:14px}
+    .category-heading p{margin:0;font-size:.73rem}
+    .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+    .category{display:flex;justify-content:space-between;align-items:center;gap:9px;min-height:47px;padding:10px 13px;border:1px solid var(--line);text-decoration:none;font-size:.77rem;font-weight:700;transition:background .15s}
+    .category:hover{background:var(--lime);color:var(--ink);border-color:var(--ink)}
+    .category span{color:var(--muted);font-weight:400}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;padding:68px 0}
+    .hero .eyebrow{display:block;margin-bottom:22px;color:var(--orange)}
+    .hero-copy{max-width:580px}
+    .intro{font-size:1.06rem;max-width:520px;color:var(--muted)}
+    .button{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:15px 22px;background:var(--green);color:white;text-decoration:none;font-size:.82rem;font-weight:700}
+    .button:hover{background:var(--ink);color:white}
+    .hero-note{margin:16px 0 0;font-size:.73rem;color:var(--muted)}
+    .hero-art{position:relative;padding:0 19px 22px 0}
+    .hero-art:after{content:"";position:absolute;inset:23px 0 0 22px;border:1px solid var(--ink);z-index:-1}
+    .hero-photo{height:470px;background:#e6e6de}
+    .photo-label{position:absolute;bottom:43px;left:20px;background:var(--paper);padding:12px 16px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+    .quick-answer{display:grid;grid-template-columns:190px 1fr;gap:35px;padding:29px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+    .quick-answer h2{font-family:Arial,Helvetica,sans-serif;font-size:.8rem;letter-spacing:.1em;font-weight:700;text-transform:uppercase;margin:4px 0}
+    .quick-answer p{font-size:1.02rem;margin:0;max-width:890px}
+    .section{padding:65px 0}
+    .section-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:28px}
+    .section-heading h2{margin-bottom:0}
+    .section-heading p{font-size:.85rem;max-width:330px;margin-bottom:3px;color:var(--muted)}
+    .collection{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .editorial-card{text-decoration:none;display:block}
+    .editorial-card .image{height:310px;overflow:hidden}
+    .editorial-card img{transition:transform .25s}
+    .editorial-card:hover img{transform:scale(1.025)}
+    .card-meta{display:flex;justify-content:space-between;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;margin:17px 0 10px;color:var(--muted)}
+    .editorial-card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.85rem;margin-bottom:10px}
+    .editorial-card p{font-size:.87rem;color:var(--muted)}
+    .brand-note{font-size:.74rem;color:var(--muted);margin:22px 0 0}
+    .guide{background:var(--green);color:var(--paper)}
+    .guide-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .guide-intro p{color:#d5dfd6;font-size:.92rem}
+    .steps{list-style:none;margin:0;padding:0;counter-reset:step}
+    .steps li{counter-increment:step;display:grid;grid-template-columns:42px 1fr;gap:16px;padding:21px 0;border-top:1px solid #617d6d}
+    .steps li:before{content:"0" counter(step);font-family:Georgia,serif;color:var(--lime);font-size:1.45rem;line-height:1}
+    .steps h3{margin-bottom:9px}
+    .steps p{font-size:.86rem;color:#d5dfd6;margin:0}
+    .table-container{overflow-x:auto;border:1px solid var(--line)}
+    table{width:100%;border-collapse:collapse;min-width:650px;background:var(--white);font-size:.86rem;text-align:left}
+    caption{text-align:left;padding:19px 20px;font-size:.76rem;color:var(--muted);border-bottom:1px solid var(--line)}
+    th,td{padding:17px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+    thead th{background:#eff0e5;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+    tbody th{width:23%}
+    tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:55px}
+    .panel{padding:28px;border:1px solid var(--line);background:var(--white)}
+    .panel h3{font-family:Georgia,serif;font-size:1.7rem;font-weight:400}
+    .panel ul{padding-left:19px;margin-bottom:0;color:var(--muted);font-size:.9rem}
+    .panel li{margin-bottom:12px}
+    .faq{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line);padding:21px 0}
+    summary{cursor:pointer;font-weight:700;font-size:.94rem;padding-right:15px}
+    details p{color:var(--muted);font-size:.9rem;max-width:900px;margin:15px 0 0}
+    .topic-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .topic-group{border-top:2px solid var(--ink);padding-top:20px}
+    .topic-group h3{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}
+    .topics{list-style:none;padding:0;margin:0}
+    .topics li{padding:7px 0;color:var(--muted);font-size:.82rem;border-bottom:1px solid var(--line)}
+    .closing{display:flex;justify-content:space-between;gap:30px;align-items:center;background:var(--lime);padding:34px}
+    .closing h2{font-size:2.2rem;margin-bottom:10px}
+    .closing p{margin:0;font-size:.88rem}
+    footer{padding:35px 0;font-size:.74rem;color:var(--muted)}
+    .footer-top{display:flex;justify-content:space-between;gap:25px;margin-bottom:18px}
+    footer p{max-width:970px;margin:0}
+    @media(min-width:1500px){.hero-photo{height:510px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+    @media(max-width:900px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero{gap:32px}
+      .hero-photo{height:420px}
+      .guide-grid{gap:35px}
+      .editorial-card .image{height:250px}
+      .split{gap:25px}
+    }
+    @media(max-width:640px){
+      .wrap{width:calc(100% - 32px)}
+      .header{padding:19px 0}
+      .header-note{display:none}
+      .category-heading .muted{display:none}
+      .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+      .category{font-size:.72rem;padding:10px}
+      .hero{grid-template-columns:1fr;padding:39px 0;gap:30px}
+      h1{font-size:3.8rem}
+      .hero-photo{height:350px}
+      .quick-answer{grid-template-columns:1fr;gap:12px;padding:25px 0}
+      .section{padding:43px 0}
+      .section-heading{display:block}
+      .section-heading p{margin-top:17px}
+      .collection,.guide-grid,.split,.topic-groups{grid-template-columns:1fr}
+      .collection{gap:28px}
+      .editorial-card .image{height:340px}
+      .guide-grid{gap:22px}
+      .closing{display:block;padding:25px}
+      .closing .button{margin-top:22px}
+      .footer-top{flex-direction:column;gap:10px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"Wheebuy Spreadsheet — Fashion Finds & Buying Checklist",
+        "inLanguage":"en",
+        "description":"An independent category-first guide to fashion discovery, spreadsheet comparisons and practical checks before ordering.",
+        "about":[
+          {"@type":"Thing","name":"Wheebuy spreadsheet"},
+          {"@type":"Thing","name":"Clothing size comparison"},
+          {"@type":"Thing","name":"Online shopping checklists"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "inLanguage":"en",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"What is a Wheebuy spreadsheet?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"A Wheebuy spreadsheet is a product-link list intended to help shoppers organize and compare items for a Wheebuy-related shopping workflow. Useful columns include product URLs, listed prices, measurements and review notes. A spreadsheet entry alone does not verify authenticity, stock or seller reliability."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Does this page provide a downloadable spreadsheet?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No. This page provides a browsing guide, a comparison checklist and links to CAFANS categories. It does not host an XLSX file, a Google Sheet or a verified live Wheebuy product feed."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Where do the category links lead?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"All category links lead to the corresponding CAFANS category. General browsing links lead to the CAFANS homepage."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How should I compare clothing sizes?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Compare the seller's garment measurements with a similar item you already own. Check the measurement method, units and stated tolerance instead of relying only on labels such as medium or large."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How do I estimate the total order cost?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Start with the item price, then add applicable domestic delivery, service charges, international shipping, payment or currency conversion costs, and destination taxes or duties. Confirm current charges before paying."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Do brand names or photographs prove that an item is authentic?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No. Brand names, listing titles and photographs are not proof of authenticity or authorization. Check the actual seller, product documentation, purchase terms and any available independent authentication."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/whee-ckcdr/">
+</head>
+<body>
+  <div class="topline">THE FASHION FIELD GUIDE · CATEGORIES, COMPARISONS &amp; BUYING NOTES</div>
+
+  <div class="wrap">
+    <header class="header">
+      <a class="logo" href="https://www.cafans.com" aria-label="Visit CAFANS">FIELD<span>/</span>FINDS</a>
+      <span class="header-note">An independent guide for considered browsing</span>
+      <a class="header-link" href="https://www.cafans.com">Explore CAFANS ↗</a>
+    </header>
+
+    <nav class="category-section" aria-label="Shop by product category">
+      <div class="category-heading">
+        <p class="eyebrow">01 / Start with a category</p>
+        <p class="muted">Ten ways to narrow your search</p>
+      </div>
+      <div class="categories">
+        <a class="category" href="https://cafans.com/category-911-Shoes.html">Shoes <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-913-T-Shirts.html">T-Shirts <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-914-Jackets.html">Jackets <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-915-Pants%2FShorts.html">Pants/Shorts <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-916-Headwear.html">Headwear <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-917-Sets.html">Sets <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-918-underwear%2Funderpants.html">Underwear/underpants <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-919-Jersey.html">Jersey <span aria-hidden="true">↗</span></a>
+        <a class="category" href="https://cafans.com/category-920-Accessories.html">Accessories <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" aria-labelledby="main-title">
+        <div class="hero-copy">
+          <span class="eyebrow">The discovery edit / A practical reference</span>
+          <h1 id="main-title">Wheebuy<br>spreadsheet.<br><em>Find your angle.</em></h1>
+          <p class="intro">Start with a category. Compare the details. Build a shortlist that makes sense for your wardrobe, measurements and budget.</p>
+          <p class="muted">This Wheebuy spreadsheet guide brings together fashion browsing routes and a clear checklist for evaluating product links before you order.</p>
+          <a class="button" href="https://www.cafans.com">Discover the categories <span aria-hidden="true">↗</span></a>
+          <p class="hero-note">Independent editorial guide. All shopping links open CAFANS.</p>
+        </div>
+        <div class="hero-art">
+          <div class="hero-photo">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=78"
+              alt="Red Nike athletic shoe photographed against a red background"
+              width="1000"
+              height="1000"
+              fetchpriority="high"
+              decoding="async">
+          </div>
+          <span class="photo-label">The footwear study / Shape · Fit · Detail</span>
+        </div>
+      </section>
+
+      <section class="quick-answer" aria-labelledby="quick-answer-title">
+        <h2 id="quick-answer-title">What is a Wheebuy spreadsheet?</h2>
+        <p>A <strong>Wheebuy spreadsheet</strong> is a product-link list intended to help shoppers organize and compare items for a Wheebuy-related shopping workflow. Useful fields include product URLs, listed prices, measurements and review notes. An entry is a starting point for research; it does not verify authenticity, stock or seller reliability.</p>
+      </section>
+
+      <section class="section" aria-labelledby="edit-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / The wardrobe edit</p>
+            <h2 id="edit-title">Three directions.<br>One considered shortlist.</h2>
+          </div>
+          <p>Use these visual themes to choose a starting category, then evaluate each actual listing on its own details.</p>
+        </div>
+
+        <div class="collection">
+          <a class="editorial-card" href="https://cafans.com/category-911-Shoes.html">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&amp;fit=crop&amp;w=720&amp;q=75"
+                alt="Nike sneakers shown in a close-up footwear composition"
+                width="720" height="800" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta"><span>Footwear / 01</span><span aria-hidden="true">↗</span></div>
+            <h3>Start from the sole.</h3>
+            <p>For Nike-related searches, compare the model reference, selected color, size chart and seller information before shortlisting.</p>
+          </a>
+
+          <a class="editorial-card" href="https://cafans.com/category-913-T-Shirts.html">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&amp;fit=crop&amp;w=720&amp;q=75"
+                alt="Clothing arranged as an editorial wardrobe reference"
+                width="720" height="800" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta"><span>Clothing / 02</span><span aria-hidden="true">↗</span></div>
+            <h3>Build the silhouette.</h3>
+            <p>Exploring Louis Vuitton (LV) or Gucci clothing? Record garment measurements, fabric descriptions and the exact item reference.</p>
+          </a>
+
+          <a class="editorial-card" href="https://cafans.com/category-920-Accessories.html">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&amp;fit=crop&amp;w=720&amp;q=75"
+                alt="Jewelry detail used as an accessories styling reference"
+                width="720" height="800" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta"><span>Accessories / 03</span><span aria-hidden="true">↗</span></div>
+            <h3>Finish with detail.</h3>
+            <p>For Hermès, Gucci and other accessory searches, check dimensions, materials, fastening details and documentation.</p>
+          </a>
+        </div>
+        <p class="brand-note">Photography is illustrative, not a verified product catalog. Clothing and jewelry photographs do not establish the brands discussed. Nike, Louis Vuitton, Gucci and Hermès are trademarks of their respective owners; this guide is not affiliated with or endorsed by them.</p>
+      </section>
+
+      <section class="guide section" aria-labelledby="workflow-title">
+        <div class="wrap guide-grid" style="width:calc(100% - 56px)">
+          <div class="guide-intro">
+            <p class="eyebrow">03 / The comparison method</p>
+            <h2 id="workflow-title">A better list starts with better questions.</h2>
+            <p>Use this Wheebuy shopping guide to turn scattered bookmarks into a comparison you can actually use.</p>
+            <p>Keep dated notes. Product pages, options and charges can change between discovery and checkout.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <div>
+                <h3>Choose the purpose</h3>
+                <p>Define the category, intended use, preferred fit and maximum total budget before collecting links.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Capture the exact listing</h3>
+                <p>Save the seller, source URL, selected variant, listed currency and the date you checked the page.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Compare measurable details</h3>
+                <p>Use garment dimensions, shoe measurements where available, material descriptions and relevant photographs.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Review the complete cost</h3>
+                <p>Include applicable delivery, service, payment, currency conversion and destination charges before deciding.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="comparison-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / Product-link essentials</p>
+            <h2 id="comparison-title">What belongs in your comparison?</h2>
+          </div>
+          <p>A useful Wheebuy product links list records evidence and uncertainty alongside the item name.</p>
+        </div>
+
+        <div class="table-container" role="region" aria-label="Product comparison fields" tabindex="0">
+          <table>
+            <caption>Suggested fields for your own fashion comparison sheet. These are research fields, not live product data.</caption>
+            <thead>
+              <tr><th scope="col">Field</th><th scope="col">What to record</th><th scope="col">Why it helps</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Source and variant</th><td>Product URL, seller, color, size and item reference</td><td>Keeps similar-looking listings and options separate.</td></tr>
+              <tr><th scope="row">Price and currency</th><td>Listed amount, currency and date checked</td><td>Avoids comparing figures expressed in different currencies.</td></tr>
+              <tr><th scope="row">Fit and measurements</th><td>Size chart, units, measurement method and tolerance</td><td>Supports a more useful fit comparison than size labels alone.</td></tr>
+              <tr><th scope="row">Materials and finish</th><td>Composition, construction details and unresolved questions</td><td>Makes missing information visible before purchase.</td></tr>
+              <tr><th scope="row">Photos and reviews</th><td>Image source, review date and whether the variant matches</td><td>Helps distinguish relevant evidence from unrelated images.</td></tr>
+              <tr><th scope="row">Estimated total</th><td>Item cost plus applicable fees, shipping and import charges</td><td>Provides a more realistic budget than the item price alone.</td></tr>
+              <tr><th scope="row">Terms and status</th><td>Availability, return conditions and verification notes</td><td>Highlights details that need confirmation before payment.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="split" aria-label="Sizing and photograph guidance">
+        <article class="panel">
+          <p class="eyebrow">Fit notes</p>
+          <h3>Measure something you already wear.</h3>
+          <ul>
+            <li><strong>T-shirts and hoodies:</strong> compare chest width, body length, shoulder width and sleeve length.</li>
+            <li><strong>Pants and shorts:</strong> check waist, rise, thigh width and inseam using the same measurement method.</li>
+            <li><strong>Shoes:</strong> review the model-specific chart and any available foot-length guidance.</li>
+            <li><strong>Headwear and jewelry:</strong> confirm circumference, ring size, chain length or other relevant dimensions.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Photo notes</p>
+          <h3>Look beyond the first picture.</h3>
+          <ul>
+            <li>Check that photographs show the selected model, color and variant.</li>
+            <li>Review seams, closures, soles, labels and finish where visible.</li>
+            <li>Treat lighting and display color as possible sources of variation.</li>
+            <li>Use photographs to inspect visible details; they cannot establish authenticity or guarantee performance.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">05 / Clear answers</p>
+            <h2 id="faq-title">Before you follow a find.</h2>
+          </div>
+          <p>Direct answers to common questions about spreadsheet browsing and product comparisons.</p>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>What is a Wheebuy spreadsheet?</summary>
+            <p>A Wheebuy spreadsheet is a product-link list intended to help shoppers organize and compare items for a Wheebuy-related shopping workflow. Useful columns include product URLs, listed prices, measurements and review notes. A spreadsheet entry alone does not verify authenticity, stock or seller reliability.</p>
+          </details>
+          <details>
+            <summary>Does this page provide a downloadable spreadsheet?</summary>
+            <p>No. This page provides a browsing guide, a comparison checklist and links to CAFANS categories. It does not host an XLSX file, a Google Sheet or a verified live Wheebuy product feed.</p>
+          </details>
+          <details>
+            <summary>Where do the category links lead?</summary>
+            <p>All category links lead to the corresponding CAFANS category. General browsing links lead to the CAFANS homepage.</p>
+          </details>
+          <details>
+            <summary>How should I compare clothing sizes?</summary>
+            <p>Compare the seller's garment measurements with a similar item you already own. Check the measurement method, units and stated tolerance instead of relying only on labels such as medium or large.</p>
+          </details>
+          <details>
+            <summary>How do I estimate the total order cost?</summary>
+            <p>Start with the item price, then add applicable domestic delivery, service charges, international shipping, payment or currency conversion costs, and destination taxes or duties. Confirm current charges before paying.</p>
+          </details>
+          <details>
+            <summary>Do brand names or photographs prove that an item is authentic?</summary>
+            <p>No. Brand names, listing titles and photographs are not proof of authenticity or authorization. Check the actual seller, product documentation, purchase terms and any available independent authentication.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="topics-title" style="padding-top:0">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">06 / Research vocabulary</p>
+            <h2 id="topics-title">Refine what you look for.</h2>
+          </div>
+          <p>Related search ideas for organizing research. These are topic suggestions, not search-volume or availability claims.</p>
+        </div>
+
+        <div class="topic-groups">
+          <article class="topic-group">
+            <h3>Wheebuy finds</h3>
+            <ul class="topics">
+              <li>Wheebuy spreadsheet shoes</li>
+              <li>Wheebuy sneaker finds</li>
+              <li>Wheebuy clothing finds</li>
+              <li>Wheebuy hoodie spreadsheet</li>
+              <li>Wheebuy sweater finds</li>
+              <li>Wheebuy T-shirt links</li>
+              <li>Wheebuy jacket finds</li>
+              <li>Wheebuy pants spreadsheet</li>
+              <li>Wheebuy shorts finds</li>
+              <li>Wheebuy matching sets</li>
+            </ul>
+          </article>
+          <article class="topic-group">
+            <h3>Categories and details</h3>
+            <ul class="topics">
+              <li>Wheebuy headwear finds</li>
+              <li>Wheebuy caps and hats</li>
+              <li>Wheebuy jersey links</li>
+              <li>Wheebuy underwear sizing</li>
+              <li>Wheebuy accessories spreadsheet</li>
+              <li>Wheebuy jewelry measurements</li>
+              <li>Wheebuy Nike model comparison</li>
+              <li>Wheebuy LV item references</li>
+              <li>Wheebuy Gucci clothing measurements</li>
+              <li>Wheebuy Hermès accessory dimensions</li>
+            </ul>
+          </article>
+          <article class="topic-group">
+            <h3>Wheebuy shopping guide</h3>
+            <ul class="topics">
+              <li>Wheebuy product links</li>
+              <li>Wheebuy size chart comparison</li>
+              <li>Wheebuy garment measurements</li>
+              <li>Wheebuy product photo checks</li>
+              <li>Wheebuy seller review checklist</li>
+              <li>Wheebuy material descriptions</li>
+              <li>Wheebuy shipping cost questions</li>
+              <li>Wheebuy total order budget</li>
+              <li>Wheebuy return policy questions</li>
+              <li>Wheebuy spreadsheet comparison template</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <aside class="closing" aria-label="Continue browsing">
+        <div>
+          <p class="eyebrow">Your next starting point</p>
+          <h2>Find a category. Make a shortlist.</h2>
+          <p>Explore CAFANS, then compare the details that matter to you.</p>
+        </div>
+        <a class="button" href="https://www.cafans.com">Browse CAFANS <span aria-hidden="true">↗</span></a>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <a class="logo" href="https://www.cafans.com">FIELD<span>/</span>FINDS</a>
+        <span>Wheebuy spreadsheet · Independent fashion research guide</span>
+      </div>
+      <p>This page provides general comparison guidance and CAFANS browsing links. It does not represent Wheebuy or any named brand. Product availability, compatibility with a shopping service, prices, authenticity and shipping terms must be checked with the relevant provider before ordering.</p>
+    </footer>
+  </div>
+</body>
+</html>
